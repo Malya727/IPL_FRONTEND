@@ -1,4 +1,8 @@
 {
+    "engines": {
+        "node": "12.14.1",
+        "npm": "6.13.4"
+    },
     "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
     "version": 1,
     "newProjectRoot": "projects",

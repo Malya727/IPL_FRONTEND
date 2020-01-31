@@ -21,6 +21,10 @@ export class IplService {
     let url = `${this.baseUrl}team/rolestat/${teamname}`;
   return this.http.get(url);
 }
+  getPlayerByTeamAndRole(teamname,role):Observable<any>{
+    let url = `${this.baseUrl}team/${role}/${teamname}`; 
+    return this.http.get(url);
+  }
 
 
 

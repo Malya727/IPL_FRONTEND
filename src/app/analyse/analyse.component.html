@@ -30,8 +30,12 @@
         </div>
         <div class="col-md-6">
             <div *ngIf="pieChart">
-                <google-chart [data]="pieChart"></google-chart>
+                <google-chart [data]="pieChart" (chartSelect)="onChartSelect($event)"></google-chart>
             </div>
         </div>
+        <div *ngIf="tableChart">
+            <google-chart [data]="tableChart" "></google-chart>
+        </div>
+
     </div>
 </div>

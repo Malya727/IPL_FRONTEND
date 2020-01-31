@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IplService } from '../ipl.service';
 import { GoogleChartInterface } from 'ng2-google-charts/google-charts-interfaces';
+import { ChartSelectEvent } from 'ng2-google-charts';
 
 @Component({
   selector: 'app-analyse',
@@ -14,6 +15,7 @@ export class AnalyseComponent implements OnInit {
   teamName;
   players;
   piechart: GoogleChartInterface;
+  tableChart:GoogleChartInterface;
 
   constructor(private iplservice: IplService) { }
 
@@ -43,10 +45,7 @@ export class AnalyseComponent implements OnInit {
           }
           this.showRoleStatChart(data);
         })
-
-
     }
-
   }
 
   showRoleStatChart(data) {
@@ -58,6 +57,29 @@ export class AnalyseComponent implements OnInit {
         'height': 600,
         'width': 700
       }
+    }
+  }
+
+  //On Chart Select
+  onChartSelect(event:ChartSelectEvent){
+    let role = event.selectedRowFormattedValues[0];
+    this.iplservice.getPlayerByTeamAndRole(this.teamName,role).subscribe(
+      res=>{
+        let stat = res["players"];
+        let data = []
+        data.push(["Name", "Team" , "Role" , "Price"]);
+        for (let s of stat) {
+          data.push([s["player"],s["label"],s["role"] , s["price"]]);
+
+        }
+        this.showchartTable(data);
+      })
+  }
+
+  showchartTable(data){
+    this.tableChart = {
+      chartType: "Table",
+      dataTable: data,
     }
   }
 }
