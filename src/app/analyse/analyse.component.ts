@@ -14,8 +14,10 @@ export class AnalyseComponent implements OnInit {
   teamNames;
   teamName;
   players;
-  piechart: GoogleChartInterface;
+  pieChart: GoogleChartInterface;
   tableChart:GoogleChartInterface;
+
+
 
   constructor(private iplservice: IplService) { }
 

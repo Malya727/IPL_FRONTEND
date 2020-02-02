@@ -1,0 +1,114 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 mt-4">
+            <h5>Maximum Paid Wicket Keeper</h5>
+            <div *ngIf="maxwk && maxwk.length > 0" class="mt-4">
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Name</th>
+                            <th>Role</th>
+                            <th>Label</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let player of maxwk">
+                            <td>{{player.player}}</td>
+                            <td>{{player.role}}</td>
+                            <td>{{player.label}}</td>
+                            <td>{{player.price | currency:"INR"}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div><br/>
+            <h5>Maximum Paid Batsman</h5>
+            <div *ngIf="maxbat && maxbat.length > 0" class="mt-4">
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Name</th>
+                            <th>Role</th>
+                            <th>Label</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let player of maxbat">
+                            <td>{{player.player}}</td>
+                            <td>{{player.role}}</td>
+                            <td>{{player.label}}</td>
+                            <td>{{player.price | currency:"INR"}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div><br/>
+            <h5>Maximum Paid Bowler</h5>
+            <div *ngIf="maxbowl && maxbowl.length > 0" class="mt-4">
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Name</th>
+                            <th>Role</th>
+                            <th>Label</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let player of maxbowl">
+                            <td>{{player.player}}</td>
+                            <td>{{player.role}}</td>
+                            <td>{{player.label}}</td>
+                            <td>{{player.price | currency:"INR"}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div><br/>
+            <h5>Maximum Paid All-Rounder</h5>
+            <div *ngIf="maxall && maxall.length > 0" class="mt-4">
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Name</th>
+                            <th>Role</th>
+                            <th>Label</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let player of maxall">
+                            <td>{{player.player}}</td>
+                            <td>{{player.role}}</td>
+                            <td>{{player.label}}</td>
+                            <td>{{player.price | currency:"INR"}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-6 mt-4">
+            <h5>Player Details Sorted By Price</h5>
+            <div *ngIf="li && li.length >0" class="mt-4">
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Name</th>
+                            <th>Role</th>
+                            <th>Label</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let player of li">
+                            <td>{{player.player}}</td>
+                            <td>{{player.role}}</td>
+                            <td>{{player.label}}</td>
+                            <td>{{player.price | currency:"INR"}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
